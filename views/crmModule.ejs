@@ -1,7 +1,12 @@
+<!-- NOTE : Keep id's , action , method , name, value the same -->
+<!-- TODO : Add styling and remove br tags after each input tag instead use padding etc -->
+
 <html>
     <head>
         <title>
-            <%= title %>
+            
+            <%= title %> 
+
         </title>
     </head>
     <body>
@@ -13,24 +18,37 @@
             <h4>Customer Personal Details</h4>
 
             <!-- Created customer personal detail form -->
-            <form action="" id="new-customer-pd" method="POST">
+            <form action="/customer/createCustomer" id="new-customer-pd" method="POST">
 
-                <input type="text" name="firstName" id="" placeholder="First Name " required ><br><br>
-                <input type="text" name="lastName" id="" placeholder="Last Name" required ><br><br>
-                <input type="text" name="phone" id="" placeholder="Phone Number" required ><br><br>
-                <input type="text" name="altPhone" id="" placeholder="Alt. Phone Number"  ><br><br>
-                <input type="text" name="addressLine1" id="" placeholder="Address Line 1" required ><br><br>
-                <input type="text" name="addressLine2" id="" placeholder="Address Line 2"  ><br><br>
-                <input type="number" name="pincode" id="" placeholder="Pincode" required ><br><br>
-                <input type="text" name="city" id="" placeholder="City" required ><br><br>
-                <input type="text" name="state" id="" placeholder="State" required ><br><br>
-                <input type="text" name="country" id="" placeholder="Country" required ><br><br>
-                <input type="email" name="email" id="" placeholder="Email" required ><br><br>
-                <input type="date" name="dateOfBirth" id="" placeholder="Date of birth" required ><br><br>
+                <input type="text" name="first_name" id="" placeholder="First Name " required ><br>
+                <input type="text" name="last_Name" id="" placeholder="Last Name" required ><br>
+                <input type="text" name="phone" id="" placeholder="Phone Number" required ><br>
+                <input type="text" name="altPhone" id="" placeholder="Alt. Phone Number"  ><br>
+                <input type="text" name="addressLine1" id="" placeholder="Address Line 1" required ><br>
+                <input type="text" name="addressLine2" id="" placeholder="Address Line 2"  ><br>
+                <input type="number" name="pincode" id="" placeholder="Pincode" required ><br>
+                <input type="text" name="city" id="" placeholder="City" required ><br>
+                <input type="text" name="state" id="" placeholder="State" required ><br>
+                <input type="text" name="country" id="" placeholder="Country" required ><br>
+                <input type="email" name="email" id="" placeholder="Email" required ><br>
+                <input type="date" name="dateOfBirth" id="" placeholder="Date of birth" required ><br>
 
                 <input type="submit" value="Add Customer PD">
 
             </form>
+        </section>
+
+        <section id="show-customer">
+            <h4>All Customers</h4>
+            <div id="customer-list-container">
+                <ul>
+                    <% for(customer of customers){ %>
+                        <li>
+                            <%= customer %>
+                        </li><br>
+                   <% } %>
+                </ul>
+            </div>
         </section>
     </body>
 </html>

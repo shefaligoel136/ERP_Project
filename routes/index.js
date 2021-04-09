@@ -5,9 +5,10 @@ const indexController = require('../controllers/index_controller');
 
 const dashboardController = require('../controllers/dashboard_controller');
 
-router.get('/',indexController.index);
-router.get('/dashBoard',dashboardController.dashBoard);
+router.get('/',indexController.crmModule);
+// router.get('/dashBoard',dashboardController.dashBoard);
 
-router.use('/dashBoard',require('./dashboard'));
+// router.use('/dashBoard',require('./dashboard'));
+router.use('/customer',require('./customer'));
 
 module.exports = router;

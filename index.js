@@ -6,8 +6,10 @@ const port = 7700;
 //mongo db connection
 const db = require('./configs/mongoose');
 
+app.use(express.urlencoded({extended: true}));
+
 // setting up the ejs
-app.set('view engine','ejs');
+app.set('view engine','ejs'); 
 app.set('views','./views');
 
 app.use('/',require('./routes'));
