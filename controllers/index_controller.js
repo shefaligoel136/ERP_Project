@@ -5,6 +5,6 @@ module.exports.index = function(req,res){
 
     // by using views
     return res.render('login',{
-        title: 'Login Page'
+        title: 'Admin Login Page'
     })
 }

@@ -9,3 +9,9 @@ module.exports.dashBoard = function(req,res){
         title : 'DashBoard'
     })
 }
+
+module.exports.crmModule = function(req,res){
+    res.render('crmModule',{
+        title : 'CRM'
+    })
+} 
