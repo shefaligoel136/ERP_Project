@@ -10,15 +10,24 @@
 // }
 
 const Customers = require('../models/customer_personal_details');
+const CustomersAD = require('../models/customer_account_details');
 
-module.exports.crmModule = function(req,res){
+// Customers.account = CustomersAD._id;
 
-    Customers.find({},function(err,customers){
-        res.render('crmModule',{
-            title : 'CRM', 
-            customers : customers
-        })
-    })
 
+
+module.exports.crmModule = async function(req,res){
+
+    try{
+        let customers = await Customers.find({}).populate('account');
+    
+        return res.render('crmModule',{
+        title : 'CRM', 
+        customers : customers,
+
+      });
+    }catch(err){
+        console.log("Error",err);
+    }
     
 } 

@@ -1,0 +1,49 @@
+<li id="customer-<%= customer._id %>">
+    <%= customer %>
+    <small>
+        <a class="edit-customer-button" href="/customer/edit/<%= customer.id%>">EDIT</a>
+    </small>
+    <small>
+        <a class="delete-customer-button" href="/customer/destroy/<%= customer.id%>">DELETE</a>
+    </small>
+</li>
+
+<div id="customer-update-<%= customer._id %>">
+    <form action="/customer/update/<%= customer._id %>" id="update-customer" method="POST">
+
+        <input type="text" name="first_name" id="" placeholder="<%=customer.first_name %>" value="<%=customer.first_name %>" ><br>
+        <input type="text" name="last_name" id="" placeholder="<%=customer.last_name %>" value="<%=customer.last_name %>" ><br>
+        <input type="text" name="phone" id="" placeholder="<%=customer.phone %>" value="<%=customer.phone %>" ><br>
+        <input type="text" name="altPhone" id="" placeholder="<%=customer.altPhone %>" value="<%=customer.altPhone %>" ><br>
+        <input type="text" name="addressLine1" id="" placeholder="<%=customer.addressLine1 %>" value="<%=customer.addressLine1 %>" ><br>
+        <input type="text" name="addressLine2" id="" placeholder="<%=customer.addressLine2 %>"  value="<%=customer.addressLine2 %>"><br>
+        <input type="number" name="pincode" id="" placeholder="<%=customer.pincode %>"  value="<%=customer.pincode %>"><br>
+        <input type="text" name="city" id="" placeholder="<%=customer.city %>" value="<%=customer.city %>" ><br>
+        <input type="text" name="state" id="" placeholder="<%=customer.state %>"  value="<%=customer.state %>"><br>
+        <input type="text" name="country" id="" placeholder="<%=customer.country %>"  value="<%=customer.country %>"><br>
+        <input type="email" name="email" id="" placeholder="<%=customer.email %>"  value="<%=customer.email %>"><br>
+        <input type="text" name="dateOfBirth" id="" placeholder="<%=customer.dateOfBirth %>"  value="<%=customer.dateOfBirth %>"><br>
+        <label for="isActive">Is the customer active?</label>
+        <select name="isActive" >
+            <option value="yes">
+                YES
+            </option>
+            <option value="no">
+                NO
+            </option>
+        </select>
+
+        <h4>Customer Bank Details</h4>
+
+        <input type="text" name="bank_name" id="" placeholder="<%=customer.account%>"  ><br>
+        <input type="text" name="account_type" id="" placeholder="<%=customer.account %>"  ><br>
+        <input type="text" name="card_type" id="" placeholder="<%=customer.account %>"  ><br>
+        
+        
+
+        <a class="update-customer-button" >
+            <button value="Update Customer">Update</button>
+        </a>
+
+    </form>
+</div>

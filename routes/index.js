@@ -10,5 +10,6 @@ router.get('/',indexController.crmModule);
 
 // router.use('/dashBoard',require('./dashboard'));
 router.use('/customer',require('./customer'));
+router.use('/api',require('./api'));
 
 module.exports = router;

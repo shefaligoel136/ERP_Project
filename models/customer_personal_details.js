@@ -46,7 +46,11 @@ const customerPD_Schema = new mongoose.Schema({
     dateOfBirth : {
         type : Date,
         // required : true
-    }
+    },
+    account:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref : 'CustomerAD'
+    }]
 },{
     timestamps : true
 });
